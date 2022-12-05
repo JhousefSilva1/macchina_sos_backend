@@ -22,7 +22,26 @@ public interface MacchinaUserDao {
                         
             from macchina_user
                         
-            where user_id = #{userId}
+            where user_id = #{userId};
+            AND status = true;
             """)
     MacchinaUser findByPrimaryKey(Integer userId);
+
+
+
+    @Select("""
+            select
+                
+                passwordd,
+                
+                        
+            from macchina_user
+                        
+            where 
+            username = #{username}
+            AND status = true;
+            
+           
+            """)
+    String findByUsernameAndPassword(String username);
 }
