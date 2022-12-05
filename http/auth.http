@@ -8,9 +8,10 @@ GET http://localhost:7777/api/v1/auth/1
 ### autentication
 
 POST http://localhost:7777/api/v1/auth/
-Content-Type: application/json
+content-type:application/json
 Accept: application/json
+
 {
-"username": "JhousefSilva",
-"password": "878e7wqe47878dqc8787q"
+  "username": "JhousefSilva",
+  "password": "878e7wqe47878dqc8787q"
 }

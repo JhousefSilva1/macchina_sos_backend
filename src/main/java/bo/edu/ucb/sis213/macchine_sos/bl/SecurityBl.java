@@ -38,23 +38,34 @@ public class SecurityBl {
     // la constrasena del user y la compara con su equivalente en BCrypt
     public AuthResDto authenticate(AuthReqDto credentials) {
 
-        AuthResDto result = null;
+        AuthResDto result = new AuthResDto();
+        System.out.println("Comenzando el preoceso de autenticacion con " + credentials);
+
         String currentPasswordInBcrypt = macchinaUserDao.findByUsernameAndPassword(credentials.username());//No se le pasa el PWD
+        System.out.println("Se obtuvo la siguiente contrasena de la base de datos: " + currentPasswordInBcrypt);
+
+
 
         //consulto si los pwd son iguales
         if (currentPasswordInBcrypt != null) {
+            System.out.println("Se procede a comparar las contrasenas");
             BCrypt.Result bcryptresult = BCrypt.verifyer().verify(credentials.passwordd().toCharArray(), currentPasswordInBcrypt);
             if (bcryptresult.verified) {
                 //Si son iguales, retorno un objeto de tipo AuthResDto
                 //procedemos a generar el token
-
+                System.out.println("Las contrasenas son iguales se procede a generar el token");
                 result.setToken("Test Token");
                 result.setRefreshToken("Test Refresh Token");
             } else {
+                System.out.println("Las contrasenas no son iguales");
                 //Si no son iguales, retorno un objeto de tipo AuthResDto
                 throw new RuntimeException("Forbidden the password is incorrect");
             }
+        }else {
+            System.out.println("No se encontro el usuario");
+            throw new RuntimeException("Forbidden the user does not exist");
         }
             return result;
         }
+
     }

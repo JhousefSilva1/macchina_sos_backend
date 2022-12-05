@@ -16,13 +16,16 @@ public class SecurityBlTest {
     @Test
     void successAuthentication(){
 
-        MacchinaUserDao macchinaUserDao = Mockito.mock(MacchinaUserDao.class); //invetar un DAO
-        SecurityBl securityBl = new SecurityBl(macchinaUserDao);
+        MacchinaUserDao macchinaUserDao = Mockito.mock(MacchinaUserDao.class); //invetar un DAO implementacion falsa
 
-        AuthResDto response = securityBl.authenticate(new AuthReqDto("JhousefSilva","878e7wqe47878dqc8787q"));
+        Mockito.when(macchinaUserDao.findByUsernameAndPassword("Jose")).
+                thenReturn("$2a$12$I7U.7RXSb8FtrCRhGjFXZuVyZQDlz9vgjIrIr1mrNulA4sS21alRG"); //simular que el usuario existe
+        SecurityBl securityBl = new SecurityBl(macchinaUserDao);
+        AuthResDto response = securityBl.authenticate(new AuthReqDto("Jose","test1234"));
 
         Assertions.assertNotNull(response);//que la respuesta no sea nulo
         Assertions.assertNotNull(response.getToken());//que el token no sea nulo
         Assertions.assertNotNull(response.getRefreshToken());//que el refresh token no sea nulo
+
     }
 }

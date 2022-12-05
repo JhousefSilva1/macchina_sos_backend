@@ -10,7 +10,7 @@ CREATE TABLE macchina_user (
     named varchar(200)  NOT NULL,
     lastnames varchar(200)  NOT NULL,
     email varchar(400)  NOT NULL,
-    phone int  NOT NULL,
+    phone Varchar(200)  NOT NULL,
     dni varchar(200)  NOT NULL,
     status boolean  NOT NULL,
     tx_username varchar(200)  NOT NULL,

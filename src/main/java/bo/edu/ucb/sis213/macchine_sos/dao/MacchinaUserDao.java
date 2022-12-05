@@ -1,6 +1,7 @@
 package bo.edu.ucb.sis213.macchine_sos.dao;
 
 import bo.edu.ucb.sis213.macchine_sos.entity.MacchinaUser;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
 public interface MacchinaUserDao {
@@ -23,11 +24,9 @@ public interface MacchinaUserDao {
             from macchina_user
                         
             where user_id = #{userId}
-            AND status = true;
+            AND status = true
             """)
     MacchinaUser findByPrimaryKey(Integer userId);
-
-
 
     @Select("""
             select
@@ -39,9 +38,30 @@ public interface MacchinaUserDao {
                         
             where 
             username = #{username}
-            AND status = true;
-            
-           
+            AND status = true
+
             """)
     String findByUsernameAndPassword(String username);
+
+    @Insert("""
+            INSERT INTO
+                macchina_user
+                (
+                    username,
+                    passwordd,
+                    named,
+                    lastnames,
+                    email,
+                    phone,
+                    dni,
+                    status,
+                    tx_username,
+                    tx_host,
+                    tx_date
+                )
+                
+                VALUES (#{username}, #{passwordd}, #{named}, #{lastnames}, #{email}, {phone}, #{dni}, true, 'anonymus', '127.0.0.1',now())
+ 
+            """)
+    void CreateUser(MacchinaUser macchinaUser);
 }
