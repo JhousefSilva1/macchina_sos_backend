@@ -22,7 +22,7 @@ public interface MacchinaUserDao {
                         
             from macchina_user
                         
-            where user_id = #{userId};
+            where user_id = #{userId}
             AND status = true;
             """)
     MacchinaUser findByPrimaryKey(Integer userId);
