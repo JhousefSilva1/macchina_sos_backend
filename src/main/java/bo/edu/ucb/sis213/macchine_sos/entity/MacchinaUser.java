@@ -8,11 +8,11 @@ import java.util.Objects;
 //usamos la entidad macchina_user de la base de datos
 public class MacchinaUser {
 
-    private Integer user_id;
+    private Integer userId;
     private String username;
     private String passwordd;
     private String named;
-    private String lastnaames;
+    private String lastnames;
     private String email;
     private String phone;
     private String dni;
@@ -24,12 +24,12 @@ public class MacchinaUser {
     public MacchinaUser() {
     }
 
-    public MacchinaUser(Integer user_id, String username, String passwordd, String named, String lastnaames, String email, String phone, String dni, boolean status, String tx_user, String tx_host, Date tx_date) {
-        this.user_id = user_id;
+    public MacchinaUser(Integer userId, String username, String passwordd, String named, String lastnames, String email, String phone, String dni, boolean status, String tx_user, String tx_host, Date tx_date) {
+        this.userId = userId;
         this.username = username;
         this.passwordd = passwordd;
         this.named = named;
-        this.lastnaames = lastnaames;
+        this.lastnames = lastnames;
         this.email = email;
         this.phone = phone;
         this.dni = dni;
@@ -39,12 +39,12 @@ public class MacchinaUser {
         this.tx_date = tx_date;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {
@@ -71,12 +71,12 @@ public class MacchinaUser {
         this.named = named;
     }
 
-    public String getLastnaames() {
-        return lastnaames;
+    public String getLastnames() {
+        return lastnames;
     }
 
-    public void setLastnaames(String lastnaames) {
-        this.lastnaames = lastnaames;
+    public void setLastnames(String lastnames) {
+        this.lastnames = lastnames;
     }
 
     public String getEmail() {
@@ -138,11 +138,11 @@ public class MacchinaUser {
     @Override
     public String toString() {
         return "MacchinaUser{" +
-                "user_id=" + user_id +
+                "user_id=" + userId +
                 ", username='" + username + '\'' +
                 ", passwordd='" + passwordd + '\'' +
                 ", named='" + named + '\'' +
-                ", lastnaames='" + lastnaames + '\'' +
+                ", lastnaames='" + lastnames + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", dni='" + dni + '\'' +
@@ -158,11 +158,11 @@ public class MacchinaUser {
         if (this == o) return true;
         if (o==null || getClass() != o.getClass()) return false;
         MacchinaUser macUser = (MacchinaUser) o;
-        return Objects.equals(user_id, macUser.user_id);
+        return Objects.equals(userId, macUser.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(user_id);
+        return Objects.hash(userId);
     }
 }
