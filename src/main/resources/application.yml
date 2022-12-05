@@ -1,0 +1,14 @@
+# definimos en que puerto va a correr
+
+server:
+  port: 7777
+
+Spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/macchina_sos
+    username: postgres
+    password: 12345
+
+
+
