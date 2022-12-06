@@ -21,6 +21,8 @@ import java.util.List;
 @Service
 
 public class SecurityBl {
+
+    private final static String JWT_SECRET = "pruebaToken";
     private MacchinaUserDao macchinaUserDao;
 
     private MacchinaRolDao macchinaRolDao;
@@ -93,7 +95,7 @@ public AuthResDto generateTokenJwt(String subject, int expirationTimeSeconds, Li
         AuthResDto result = new AuthResDto();
             //generar el token principal
         try{
-            Algorithm algorithm = Algorithm.HMAC256("pruebaToken");
+            Algorithm algorithm = Algorithm.HMAC256(JWT_SECRET);
             String token = JWT.create()
                     .withIssuer("ucb")
                     .withSubject(subject)
@@ -116,5 +118,36 @@ public AuthResDto generateTokenJwt(String subject, int expirationTimeSeconds, Li
 
         return  result;
 
+    }
+
+    //Este metodo valida un token jwt y retorna el usuario que lo genero
+
+    public MacchinaUser validateJwtToken (String jwt){
+            //MacchinaUser result = new MacchinaUser();
+
+        MacchinaUser result = null;
+
+        try{
+            String username = JWT.require(Algorithm.HMAC256(JWT_SECRET))
+                    .withIssuer("ucb")
+                    .build()
+                    .verify(jwt)
+                    .getSubject();
+            result = macchinaUserDao.findByUsername(username);
+        }catch(Exception exception){
+            throw new RuntimeException("Error al validar el token", exception);
+        }
+        return result;
+
+    }
+    //Este metodo valida un token jwt y retorna si contiene o no el rol
+    public boolean tokenHashRole(String jwt,String rol){
+      //  MacchinaUser macchinaUser = validateJwtToken(jwt);
+        List<String> roles=JWT.require(Algorithm.HMAC256(JWT_SECRET))
+                .build()
+                .verify(jwt)
+                .getClaim("roles"). asList(String.class);
+
+        return roles.contains(rol);
     }
 }

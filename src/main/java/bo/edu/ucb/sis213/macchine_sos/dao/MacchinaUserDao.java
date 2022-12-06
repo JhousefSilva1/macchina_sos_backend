@@ -64,4 +64,27 @@ public interface MacchinaUserDao {
  
             """)
     void CreateUser(MacchinaUser macchinaUser);
+
+
+    @Select("""
+            select
+                user_id,
+                username,
+                passwordd,
+                named,
+                lastnames,
+                email,
+                phone,
+                dni,
+                status,
+                tx_username,
+                tx_host,
+                tx_date
+                        
+            from macchina_user
+                        
+            where username = #{username}
+            AND status = true
+            """)
+    MacchinaUser findByUsername(String username);
 }

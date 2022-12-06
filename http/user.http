@@ -1,9 +1,10 @@
-POST http://localhost:7777/api/v1/user
+POST http://localhost:7777/api/v1/user/
 content-type:application/json
 Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKaG91c2VmU2lsdmEiLCJyb2xlcyI6WyJDUkVBUl9PUkRFTiIsIkxFUlJfT1JERU4iLCJDUkVBUl9VU1VBUklPIl0sImlzcyI6InVjYiIsInJlZnJlc2giOmZhbHNlLCJleHAiOjE2NzAzMDgzNTl9.fwVNvyfXW929zH34mj4O2nebmzggKRC6TbAU4FY_EFg
 
 {
-    "username": "Jose",
+    "username": "JhousefSilvaa",
     "passwordd": "test1234",
     "named": "Jose",
     "lastnames": "Pozo",
