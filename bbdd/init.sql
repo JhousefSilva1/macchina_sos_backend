@@ -1,21 +1,21 @@
 -- insertar datos en tabla macchine_user, con passwordd hasheada
 INSERT INTO macchina_user (username, passwordd, named, lastnames, email, phone, dni, status, tx_username, tx_host, tx_date)
-VALUES ('JhousefSilva','878e7wqe47878dqc8787q','Jhousef','Silva','jhousef_silva@gmail.com','65578478','45641654',true,'JhousefSilva','127.0.0.1',now());
+VALUES ('JhousefSilva','$2a$12$I7U.7RXSb8FtrCRhGjFXZuVyZQDlz9vgjIrIr1mrNulA4sS21alRG','Jhousef','Silva','jhousef_silva@gmail.com','65578478','45641654',true,'JhousefSilva','127.0.0.1',now());
 
 INSERT INTO macchina_user (username, passwordd, named, lastnames, email, phone, dni, status, tx_username, tx_host, tx_date)
-VALUES ('CamilaPerez','878e7wqe47878dqc8787q','Camila','Perez','camila_perez@gmail.com','65578478','45641654',true,'CamilaPerez','127.0.0.1',now());
+VALUES ('CamilaPerez','$2a$12$I7U.7RXSb8FtrCRhGjFXZuVyZQDlz9vgjIrIr1mrNulA4sS21alRG','Camila','Perez','camila_perez@gmail.com','65578478','45641654',true,'CamilaPerez','127.0.0.1',now());
 
 INSERT INTO macchina_user (username, passwordd, named, lastnames, email, phone, dni, status, tx_username, tx_host, tx_date)
-VALUES ('JuanDiaz','878e7wqe47878dqc8787q','Juan','Diaz','juan_diaz@gmail.com','65578478','45641654',true,'JuanDiaz','127.0.0.1',now());
+VALUES ('JuanDiaz','$2a$12$I7U.7RXSb8FtrCRhGjFXZuVyZQDlz9vgjIrIr1mrNulA4sS21alRG','Juan','Diaz','juan_diaz@gmail.com','65578478','45641654',true,'JuanDiaz','127.0.0.1',now());
 
 INSERT INTO macchina_user (username, passwordd, named, lastnames, email, phone, dni, status, tx_username, tx_host, tx_date)
-VALUES ('MariaGomez','878e7wqe47878dqc8787q','Maria','Gomez','maria_gomez@gmail.com','65578478','45641654',true,'MariaPerez','127.0.0.1',now());
+VALUES ('MariaGomez','$2a$12$I7U.7RXSb8FtrCRhGjFXZuVyZQDlz9vgjIrIr1mrNulA4sS21alRG','Maria','Gomez','maria_gomez@gmail.com','65578478','45641654',true,'MariaPerez','127.0.0.1',now());
 
 INSERT INTO macchina_user (username, passwordd, named, lastnames, email, phone, dni, status, tx_username, tx_host, tx_date)
-VALUES ('JorgeSerrano','878e7wqe47878dqc8787q','Jorge','Serrano','jorge_Serrano','65578478','45641654',true,'JorgeSerrano','127.0.0.1',now());
+VALUES ('JorgeSerrano','$2a$12$I7U.7RXSb8FtrCRhGjFXZuVyZQDlz9vgjIrIr1mrNulA4sS21alRG','Jorge','Serrano','jorge_Serrano','65578478','45641654',true,'JorgeSerrano','127.0.0.1',now());
 
 INSERT INTO macchina_user (username, passwordd, named, lastnames, email, phone, dni, status, tx_username, tx_host, tx_date)
-VALUES ('StephaniAntelo','878e7wqe47878dqc8787q','Stephani','Antelo','stephani_antelo@gmail.com','65578478','45641654',true,'StephaniAntelo','127.0.0.1',now());
+VALUES ('StephaniAntelo','$2a$12$I7U.7RXSb8FtrCRhGjFXZuVyZQDlz9vgjIrIr1mrNulA4sS21alRG','Stephani','Antelo','stephani_antelo@gmail.com','65578478','45641654',true,'StephaniAntelo','127.0.0.1',now());
 
 
 -- insertar datos para los grupos

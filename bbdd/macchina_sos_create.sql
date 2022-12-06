@@ -5,7 +5,7 @@
 -- Table: macchina_user
 CREATE TABLE macchina_user (
     user_id serial  NOT NULL,
-    username varchar(200)  NOT NULL,
+    username varchar(200)  unique NOT NULL,
     passwordd varchar(200)  NOT NULL,
     named varchar(200)  NOT NULL,
     lastnames varchar(200)  NOT NULL,
@@ -169,6 +169,9 @@ ALTER TABLE macchina_vehicles ADD CONSTRAINT macchina_vehicles_macchina_user
     NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
+-- CONSTRAINTS DE UNIQUE PARA LAS TABLAS MACCHINA_USER
+ALTER TABLE macchina_user ADD CONSTRAINT macchina_user_unique_username UNIQUE (username);
+
 
 -- End of file.
 

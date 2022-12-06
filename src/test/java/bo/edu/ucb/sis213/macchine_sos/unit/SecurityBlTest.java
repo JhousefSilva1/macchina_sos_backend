@@ -20,7 +20,7 @@ public class SecurityBlTest {
 
         Mockito.when(macchinaUserDao.findByUsernameAndPassword("Jose")).
                 thenReturn("$2a$12$I7U.7RXSb8FtrCRhGjFXZuVyZQDlz9vgjIrIr1mrNulA4sS21alRG"); //simular que el usuario existe
-        SecurityBl securityBl = new SecurityBl(macchinaUserDao);
+        SecurityBl securityBl = new SecurityBl(macchinaUserDao, null);
         AuthResDto response = securityBl.authenticate(new AuthReqDto("Jose","test1234"));
 
         Assertions.assertNotNull(response);//que la respuesta no sea nulo

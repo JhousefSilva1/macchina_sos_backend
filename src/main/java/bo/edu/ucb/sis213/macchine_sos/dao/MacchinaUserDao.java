@@ -31,7 +31,7 @@ public interface MacchinaUserDao {
     @Select("""
             select
                 
-                passwordd,
+                passwordd
                 
                         
             from macchina_user
@@ -60,7 +60,7 @@ public interface MacchinaUserDao {
                     tx_date
                 )
                 
-                VALUES (#{username}, #{passwordd}, #{named}, #{lastnames}, #{email}, {phone}, #{dni}, true, 'anonymus', '127.0.0.1',now())
+                VALUES (#{username}, #{passwordd}, #{named}, #{lastnames}, #{email}, #{phone}, #{dni}, true, 'anonymus', '127.0.0.1',now())
  
             """)
     void CreateUser(MacchinaUser macchinaUser);

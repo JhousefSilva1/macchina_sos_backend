@@ -18,7 +18,7 @@ public class AuthApi {
         this.securityBl = securityBl;
     }
     @GetMapping("/{userid}")
-    public UserDto test (@PathVariable(name = "userid") Integer userid){
+    public UserDto test (@PathVariable(name = "userId") Integer userid){
         return this.securityBl.getUserByPk(userid);
     }
 
