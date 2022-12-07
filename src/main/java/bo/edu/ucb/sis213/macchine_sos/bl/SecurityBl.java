@@ -8,6 +8,7 @@ import bo.edu.ucb.sis213.macchine_sos.dto.AuthResDto;
 import bo.edu.ucb.sis213.macchine_sos.dto.UserDto;
 import bo.edu.ucb.sis213.macchine_sos.entity.MacchinaRol;
 import bo.edu.ucb.sis213.macchine_sos.entity.MacchinaUser;
+import bo.edu.ucb.sis213.macchine_sos.util.MacchinaException;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
@@ -83,11 +84,11 @@ public class SecurityBl {
             } else {
                 System.out.println("Las contrasenas no son iguales");
                 //Si no son iguales, retorno un objeto de tipo AuthResDto
-                throw new RuntimeException("Forbidden the password is incorrect");
+                throw new MacchinaException("El usuario o contrasena son incorrectos");
             }
         }else {
             System.out.println("No se encontro el usuario");
-            throw new RuntimeException("Forbidden the user does not exist");
+            throw new MacchinaException("Error, el usuario no existe");
         }
             return result;
         }
@@ -113,7 +114,7 @@ public AuthResDto generateTokenJwt(String subject, int expirationTimeSeconds, Li
                     .sign(algorithm);
             result.setRefreshToken(refreshToken);
         }catch (JWTCreationException exception){
-           // throw new RuntimeException("Error al generar el token", exception);
+            throw new MacchinaException("El usuario y contrasena son incorrectos", exception);
         }
 
         return  result;
