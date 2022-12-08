@@ -2,9 +2,7 @@
 ## dos opciones  --------pwd ---- user---1---878e7wqe47878dqc8787q
 ## path Variable http://localhost:7777/api/v1/auth/{userId}
 ## Query Parameter http://localhost:7777/api/v1/auth?userId=1  Se lo utiliza para paginacion
-GET http://localhost:7777/api/v1/auth/1
-
-
+GET http://localhost:7777/api/v1/auth/userId
 ### autentication
 
 POST http://localhost:7777/api/v1/auth/

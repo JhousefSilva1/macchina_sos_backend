@@ -88,7 +88,7 @@ public class SecurityBl {
             }
         }else {
             System.out.println("No se encontro el usuario");
-            throw new MacchinaException("Error, el usuario no existe");
+            throw new MacchinaException("Error, el usuario o la contrasena no son correctos");
         }
             return result;
         }
@@ -136,7 +136,7 @@ public AuthResDto generateTokenJwt(String subject, int expirationTimeSeconds, Li
                     .getSubject();
             result = macchinaUserDao.findByUsername(username);
         }catch(Exception exception){
-            throw new RuntimeException("Error al validar el token", exception);
+            throw new MacchinaException("El usuario y constrase!na son incorrectos", exception);
         }
         return result;
 

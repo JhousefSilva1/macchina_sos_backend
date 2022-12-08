@@ -58,7 +58,7 @@ public class AuthApi {
 
             }catch(MacchinaException me){
                 ResponseDto<AuthResDto> responseDto = new ResponseDto<>(null,me.getMessage(),false);
-                return new ResponseEntity<>(responseDto, HttpStatus.OK);
+                return new ResponseEntity<>(responseDto, HttpStatus.BAD_REQUEST);
             }
             //retorno los tokens null porque no hay error, true porque fue exitoso
 
